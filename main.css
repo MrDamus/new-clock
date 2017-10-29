@@ -20,7 +20,9 @@ body {
   margin: 7%;
   color: red;
 }
-
+.diode-number {
+  color: wheat;
+}
 .digit {
   width: 200px;
   height: 400px;
@@ -35,6 +37,8 @@ body {
   left: 0;
   position: absolute;
   transform-origin: center left;
+  background: #153805;
+  
 }
 
 .vertical {
@@ -45,9 +49,6 @@ body {
   background: #50d118;
 }
 
-.off {
-  background: #232323;
-}
 .middle {
   top: 50%;
 }
