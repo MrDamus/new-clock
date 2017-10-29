@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Digital Clock</title>
+  <script type="text/javascript" src="digital-clock.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="digit">
+      <div id="top" class="segment on"></div>
+      <div id="topLeft" class="segment on vertical"></div>
+      <div id="topRight" class="segment on vertical right"></div>
+      <div id="middle" class="segment on middle"></div>
+      <div id="botLeft" class="segment on vertical middle"></div>
+      <div id="botRight" class="segment on vertical right middle"></div>
+      <div id="bot" class="segment on bottom"></div>
+    </div>
+      <div class="diode-container">
+        <div class="diode-wrapper">
+          <div class="diode"></div>   
+          <div class="diode-number">0</div>          
+        </div>
+        <div class="diode-wrapper">
+          <div class="diode"></div>   
+          <div class="diode-number">1</div>          
+        </div>
+        <div class="diode-wrapper">
+          <div class="diode"></div>   
+          <div class="diode-number">2</div>          
+        </div>
+        <div class="diode-wrapper">
+          <div class="diode"></div>   
+          <div class="diode-number">3</div>          
+        </div>
+    </div>
+  </div>
+</body>
+</html>

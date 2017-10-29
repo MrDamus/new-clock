@@ -1,0 +1,59 @@
+body {
+  background: #232323;
+}
+.wrapper {
+
+}
+.diode-container {
+  display: inline-flex;
+  height: auto;
+  margin: 50px;
+}
+.diode {
+  background: red;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 7%;
+  color: red;
+}
+
+.digit {
+  width: 200px;
+  height: 400px;
+  position: relative;  
+}
+.segment {
+  width: 90%;
+  height: 15px;
+  margin: 5px;
+  border-radius: 7px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+}
+
+.vertical {
+  transform: rotate(90deg)
+}
+
+.on {
+  background: #50d118;
+}
+
+.off {
+  background: #232323;
+}
+.middle {
+  top: 50%;
+}
+.bottom {
+  top: 100%;
+}
+.right {
+  left: 100%;
+}
