@@ -2,15 +2,28 @@ let timer = 0;
 let diodes = [];
 let digit = 0;
 let segments = [];
+let interval;
 window.onload = () => {
   diodes = document.getElementsByClassName("diode-wrapper")
   _refreshDiods()
   _refreshDigits()
-  setInterval(() => {
+  interval = setInterval(() => {
     timer++
     updateBoard(timer)
   }, 1000)
 };
+
+function toggleTimer (){
+  if(interval != null) {
+    clearInterval(interval)
+    interval = null
+  } else {
+    interval = setInterval(() => {
+      timer++
+      updateBoard(timer)
+    }, 1000)
+  }
+}
 
 function updateBoard(time){
   _refreshDiods()
