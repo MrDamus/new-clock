@@ -25,10 +25,34 @@ function toggleTimer (){
   }
 }
 
+function convertTime(time) {
+  var hours   = Math.floor(time / 3600)
+  var minutes = Math.floor((time - (hours * 3600)) / 60)
+  var seconds = time - (hours * 3600) - (minutes * 60)
+  var hoursString = hours.toString().split("");
+  var minutesString = minutes.toString().split("");
+  var secondsString = seconds.toString().split("");
+  return [
+    hoursString[0],
+    hoursString[1] || -1,
+    minutesString[0],
+    minutesString[1] || -1,
+    secondsString[0],
+    secondsString[1] || -1
+  ];
+}
+
 function updateBoard(time){
   _refreshDiods()
   _refreshDigits()
-  _displayDigit(time)
+  
+  const timeString = convertTime(time);
+  
+  console.log(timeString)
+  _displayDigit(timeString[4], 'seconds-10')
+  _displayDigit(timeString[5], 'seconds-1')
+  _displayDigit(timeString[3], 'minutes-10')
+  _displayDigit(timeString[2], 'minutes-1')
 }
 
 function onNumberInput(e){
@@ -41,9 +65,6 @@ function _refreshDigits(){
   Array.from(segments).forEach(function(segment, i){
     $(segment).removeClass( "on" )
   }, this);
-  // if ($(segments)[0]) {
-    
-  // }
 }
 
 function _refreshDiods() {
@@ -66,59 +87,67 @@ function _refreshDiods() {
   }
 }
 
-function _displayDigit(timeValue){
+function _displayDigit(timeValue, digitId){
   digit = $(document.getElementsByClassName("digit"))
-  if(timeValue == 1) {
-    $('#topRight').addClass( "on" )&&
-    $('#botRight').addClass( "on" )
+  if (timeValue == 0 ) {
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&    
+    $(`#${digitId} > #botLeft`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )
+  }  
+  else if(timeValue == 1) {
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )
   } else if (timeValue == 2) {
-    $('#top').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botLeft').addClass( "on" )&&
-    $('#bot').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botLeft`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" )
   } else if (timeValue == 3) {
-    $('#top').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )&&
-    $('#bot').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" )
   } else if (timeValue == 4) {
-    $('#topLeft').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )
   } else if (timeValue == 5) {
-    $('#top').addClass( "on" )&&
-    $('#topLeft').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )&&
-    $('#bot').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" )
   } else if (timeValue == 6) {
-    $('#top').addClass( "on" )&&
-    $('#topLeft').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )&&
-    $('#bot').addClass( "on" ) &&
-    $('#botLeft').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" ) &&
+    $(`#${digitId} > #botLeft`).addClass( "on" )
   } else if (timeValue == 7) {
-    $('#top').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#botRight').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )
   } else if (timeValue == 8) {
-    $('#top').addClass( "on" )&&
-    $('#topLeft').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )&&
-    $('#bot').addClass( "on" ) &&
-    $('#botLeft').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" ) &&
+    $(`#${digitId} > #botLeft`).addClass( "on" )
   } else if (timeValue == 9) {
-    $('#top').addClass( "on" )&&
-    $('#topLeft').addClass( "on" )&&
-    $('#topRight').addClass( "on" )&&
-    $('#middle').addClass( "on" )&&
-    $('#botRight').addClass( "on" )&&
-    $('#bot').addClass( "on" )
+    $(`#${digitId} > #top`).addClass( "on" )&&
+    $(`#${digitId} > #topLeft`).addClass( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
+    $(`#${digitId} > #middle`).addClass( "on" )&&
+    $(`#${digitId} > #botRight`).addClass( "on" )&&
+    $(`#${digitId} > #bot`).addClass( "on" )
   }
 }

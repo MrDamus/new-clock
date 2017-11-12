@@ -17,7 +17,7 @@
   </div>
   <input type="number" id="decimal-input" onchange="onNumberInput()" max="9" min="0"></input>
   <div class="wrapper">
-    <div class="digit">
+  <div id='minutes-10' class="digit">
       <div id="top" class="segment on"></div>
       <div id="topLeft" class="segment on vertical"></div>
       <div id="topRight" class="segment on vertical right"></div>
@@ -26,23 +26,54 @@
       <div id="botRight" class="segment on vertical right middle"></div>
       <div id="bot" class="segment on bottom"></div>
     </div>
-      <div class="diode-container">
-        <div class="diode-wrapper">
-          <div class="diode"></div>   
-          <div class="diode-number">1</div>          
-        </div>
-        <div class="diode-wrapper">
-          <div class="diode"></div>   
-          <div class="diode-number">2</div>          
-        </div>
-        <div class="diode-wrapper">
-          <div class="diode"></div>   
-          <div class="diode-number">4</div>          
-        </div>
-        <div class="diode-wrapper">
-          <div class="diode"></div>   
-          <div class="diode-number">8</div>          
-        </div>
+    <div id='minutes-1' class="digit">
+      <div id="top" class="segment on"></div>
+      <div id="topLeft" class="segment on vertical"></div>
+      <div id="topRight" class="segment on vertical right"></div>
+      <div id="middle" class="segment on middle"></div>
+      <div id="botLeft" class="segment off vertical middle"></div>
+      <div id="botRight" class="segment on vertical right middle"></div>
+      <div id="bot" class="segment on bottom"></div>
+    </div>
+    <div class="vertical-diodes">
+      <div class="vertical-diode diode"></div>   
+      <div class="vertical-diode diode"></div>          
+    </div>
+    <div id='seconds-10' class="digit">
+      <div id="top" class="segment on"></div>
+      <div id="topLeft" class="segment on vertical"></div>
+      <div id="topRight" class="segment on vertical right"></div>
+      <div id="middle" class="segment on middle"></div>
+      <div id="botLeft" class="segment off vertical middle"></div>
+      <div id="botRight" class="segment on vertical right middle"></div>
+      <div id="bot" class="segment on bottom"></div>
+    </div>
+    <div id='seconds-1' class="digit">
+      <div id="top" class="segment on"></div>
+      <div id="topLeft" class="segment on vertical"></div>
+      <div id="topRight" class="segment on vertical right"></div>
+      <div id="middle" class="segment on middle"></div>
+      <div id="botLeft" class="segment off vertical middle"></div>
+      <div id="botRight" class="segment on vertical right middle"></div>
+      <div id="bot" class="segment on bottom"></div>
+    </div>
+    <div class="diode-container">
+      <div class="diode-wrapper">
+        <div class="diode"></div>   
+        <div class="diode-number">1</div>          
+      </div>
+      <div class="diode-wrapper">
+        <div class="diode"></div>   
+        <div class="diode-number">2</div>          
+      </div>
+      <div class="diode-wrapper">
+        <div class="diode"></div>   
+        <div class="diode-number">4</div>          
+      </div>
+      <div class="diode-wrapper">
+        <div class="diode"></div>   
+        <div class="diode-number">8</div>          
+      </div>
     </div>
   </div>
 </body>
