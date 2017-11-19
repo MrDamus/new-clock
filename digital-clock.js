@@ -132,7 +132,7 @@ function _displayDigit(timeValue, digitId){
     $(`#${digitId} > #botLeft`).addClass( "on" )
   } else if (timeValue == 7) {
     $(`#${digitId} > #top`).addClass( "on" )&&
-    $(`#${digitId} > #topRight`).addClassw( "on" )&&
+    $(`#${digitId} > #topRight`).addClass( "on" )&&
     $(`#${digitId} > #botRight`).addClass( "on" )
   } else if (timeValue == 8) {
     $(`#${digitId} > #top`).addClass( "on" )&&
