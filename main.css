@@ -2,7 +2,9 @@ body {
   background: #232323;
 }
 .wrapper {
-
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .diode-container {
   display: flex;
@@ -121,7 +123,13 @@ input:checked + .slider:before {
 }
 
 .vertical-diodes {
-  display: inline-block;
+  display: inline-flex;
+  height: 223px;
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding: 0 20px;
+  margin: 55px 0;
   flex-direction: column;
 }
 .vertical-diode {
